@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Bước 1: Tạo dang sách (mảng) các phần tử 
+
+        // Bước 2: Nhập vào một phần tử muốn tìm kiếm
+
+        // Bước 4: Xây dựng hàm tìm kiếm theo thuật toán tìm kiếm tuyến tính
+
+        // Bước 5: Xây dựng hàm tìm kiếm theo thuật toán tìm kiếm nhị phân
+
+        // Bước 6: Sử dụng các hàm đã xây dựng
+
+        // Bước 7: Hiển thị thời gian thực hiện hai thuật toán
+
+
+        // if (numberGuess == secretNum){
+        //     alert ('correct');
+        // }
+        // else {
+        //     if (numberGuess > secretNum){
+        //         alert('too low');
+        //     }
+        //     else if (numberGuess < secretNum){
+        //         alert('too hight');
+        //     }
+        // }
+
+        function searchNum(arr, num) {
+
+            let numberGuess = +prompt('number guess:')
+            for (let j = 0; j < arr.length; j++) {
+
+                if (numberGuess == num) {
+                    alert('Congratulations, you got it right!!');
+                    break;
+                }
+                if (numberGuess > num) {
+                    numberGuess = +prompt('too hight, number guess ' + j++ + ' :');
+
+                }
+                if (numberGuess < num) {
+                    numberGuess = +prompt('too low, number guess ' + j++ + ' :');
+
+                }
+
+            }
+        }
+
+        let nums = [];
+        for (let i = 0; i <= 100; i++) {
+            nums[i] = i;
+        }
+
+
+        console.log(nums);
+
+        let secretNum = +prompt('secret number: ');
+      
+
+
+        function binarySearch(arr, secretNum) {
+            let l = arr[0];
+            let r = arr[arr.length - 1];
+            let numberGuess2= +prompt('number guess:');
+          
+
+            while (r >= 0) {
+                // let mid = (l + r) / 2;
+                
+                if (numberGuess2 == secretNum){
+                    alert('Congratulations, you got it right!!');
+                    break;
+                }
+               
+                if (numberGuess2 > secretNum) {
+                    r = numberGuess2 - 1;
+                    numberGuess2= +prompt('too hight, '+' Guess from ' +l+ ' to '+ r);
+                    
+
+                }
+                else {                    
+                   l = numberGuess2 +1;  
+                   numberGuess2= +prompt('too low, ' +'Guess from ' +l+ ' to '+ r);
+                   
+           
+                }
+            }
+        }
+       binarySearch(nums, secretNum);
+    </script>
+</body>
+
+</html>
